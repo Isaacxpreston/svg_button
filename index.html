@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    
+    <!--button-->
+    <div id="container">
+
+      <!--initial text with css clip path-->
+      <div id="original">
+        <div id="content">
+          our process
+        </div>
+      </div>
+
+      <!--hover state text with svg masking-->
+      <div id="button">
+        <svg width="183" height="46"  class="svg-defs">
+          <symbol id="s-text">
+            <text id="clip-text" text-anchor="middle"
+              x="50%"
+              y="61%"
+            >
+            our process
+            </text>
+          </symbol>
+          <mask id="m-text">
+            <rect
+              width="100%"
+              height="100%"
+              class="mask_shape">
+            </rect>
+            <use xlink:href="#s-text"></use>
+          </mask>
+        </svg>
+        <svg width="183" height="46" 
+          class="svg-inverted-mask">
+          <rect
+            mask="url(#m-text)"
+            class="shape-fill" />
+          <use xlink:href="#s-text"
+            class="text-transparent"
+          ></use>
+        </svg>
+      </div>
+    </div>
+
+  </body>
+</html>
